@@ -10,7 +10,6 @@ public class Demo01 {
 
     @Test
     public void test(){
-
-        System.out.println("Hello Word 123");
+        System.out.println("Hello Word");
     }
 }

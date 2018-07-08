@@ -1,1 +1,1 @@
-print(321456)
+print("hello word")
