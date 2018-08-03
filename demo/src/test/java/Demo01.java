@@ -10,7 +10,6 @@ import java.util.*;
 public class Demo01 {
 
     public void test(){
-
         System.out.println("Hello Word");
     }
 
