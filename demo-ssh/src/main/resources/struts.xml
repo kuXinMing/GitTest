@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!-- consant 常量，struts.devMode表示开发者模式，当为true时如果改变了其中的一些代码，可以不用重新启动tomcat-->
+    <constant name="struts.devMode" value="false" />
+
+    <!--package可以有多个解决重名的情况， namespace 可以不写，默认是如何路径都可以，也可以写成/xx/yy ，必须是/开头-->
+    <package name="cn.wh.controller" namespace="/" extends="struts-default">
+
+        <!--<default-action-ref name="index" />-->
+
+        <global-results>
+            <result name="error">commonPage/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <!-- action里面那个name属性值得是URL输入的路径名 ，如“http://localhost:8080/Struts2Demo/hello”，则会根据result反馈Hello.jsp-->
+        <action name="index" >
+            <result>/index.jsp</result>
+        </action>
+
+        <!-- action里面class属性值，会有对应的这个类，执行该类里面的execute()方法-->
+        <!-- action里面method属性值，会有对应class这个类中的add方法，然后执行该方法-->
+        <!-- 一般action里面不用method属性值，而是用DMI（动态方法调用）可以通过http://localhost:8080/Struts2Demo/user!addURL调用，其中user指的是action中的name值-->
+        <action name="login" class="cn.wh.controller.LoginAction" method="login">
+            <!--默认执行execute方法，可以配置method修改-->
+            <result name="success">commonPage/success.jsp</result>
+            <result name="failer">commonPage/failer.jsp</result>
+        </action>
+
+
+        <!-- 更简单的方法，通配符，name=“student*”会匹配URL中所有Studentxx，而method=“{1}”指的是name中第一个“*”匹配的值 同理，result中{1}也是一样的-->
+        <!--<action name="Student*" class="com.bjsxt.struts2.action.StudentAction" method="{1}">-->
+
+            <!--<result>/Student{1}_success.jsp</result>-->
+        <!--</action>-->
+        <!-- 甚至可以有多个通配符，class属性中也可以用{1}来匹配，最简化-->
+        <!--<action name="*_*" class="com.bjsxt.struts2.action.{1}Action" method="{2}">-->
+            <!--<result>/{1}_{2}_success.jsp</result>-->
+            <!--&lt;!&ndash; {0}_success.jsp &ndash;&gt;-->
+        <!--</action>-->
+
+
+    </package>
+    <!-- Add packages here -->
+
+</struts>
