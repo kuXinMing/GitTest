@@ -183,3 +183,113 @@
 #     1/0
 # except IOError as e:
 #     print(str(e))
+
+
+
+# class ball :
+#     teby=''
+#     test=''
+#     def __init__(self,t,e):
+#         self.teby=t
+#         self.test=e
+#     def make_shirt(self,t,e):
+#         self.teby=t
+#         self.test=e
+#     def t_shit(self):
+#         print("我的t恤样式是%s，尺码是%s"%(self.teby,self.test))
+#
+# b=ball('shijieheping','35')
+# b.t_shit()
+
+# # -*- coding: utf-8 -*-
+# def  city_country(city):
+#     city=city+"长沙"
+#     print("中国",city)
+#     return
+#
+# city=("长沙")
+# city_country(city)
+# print("中国",city)
+
+# def canshuzi(a):
+#     b=50
+#     if a>b :
+#         print("你心可真大！")
+#         # 循环
+#         return False
+#     if a<b :
+#         print("大胆猜！")
+#         # 循环
+#         return False
+#     if a==b :
+#         print("诶呦不错嘛！")
+#         return True
+#
+#
+# a=int(input("请输入一个数字："))
+# while  not canshuzi(a):
+#     a=int(input("请输入一个数字："))
+
+# class css:
+#     n="我"
+#     f="小学"
+#     def new(self,h,c):
+#         self.sase=h
+#         self.aa=c
+#     def haha (self,messae,name):
+#         self.new(messae,name)
+#         print()
+#         # self.haha(self.messae.name)
+#
+#     def ping(self):
+#         print("{0}读{1}".format(self.n,self.f))
+#
+#
+# bb=css()
+#
+# bb.ping()
+# mm=css()
+# mm.haha("my name's","liulin")
+
+
+# class css:
+#     n="我"
+#     f="小学"
+#     def new(self,h,c):
+#         self.sase=h
+#         self.aa=c
+#     def haha (self,message,name):
+#         self.new(message,name)
+#         # haha(self.sase,self.aa,*langeg)
+#
+#     def ping(self):
+#         print("{0}读{1}".format(self.n,self.f))
+#
+#
+# bb=css()
+#
+# bb.ping()
+# mm=css()
+# mm.new("my name's","liulin")
+
+
+class css:
+    n="我"
+    f="小学"
+    def new(self,h,c):
+        self.sase=h
+        self.aa=c
+    def haha (self,*langeg):
+        print(*langeg)
+        self.new(*langeg)
+        # haha(self.sase,self.aa,*langeg)
+
+    def ping(self):
+        print("{0}读{1}".format(self.n,self.f))
+
+
+bb=css()
+
+bb.ping()
+mm=css()
+mm.haha("my name's")
